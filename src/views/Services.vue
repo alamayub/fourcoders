@@ -1,18 +1,22 @@
 <template>
   <div class="services__div white">
-    <div>
-      <v-container class="py-10 py-sm-12 py-md-14 py-lg-16">
-        <div class="display-1" data-aos="fade-up" style="line-height: 1;">Our Services</div>
-        <div class="services__container mt-3">
-          <div class="services__container__item px-3 py-6 px-sm-4 py-sm-8 px-md-5 py-md-10 px-lg-6 py-lg-12" v-for="(item, i) in  services" :key="i" data-aos="zoom-in">
-            <v-icon class="pa-4" style="background: linear-gradient(90deg, rgba(243,108,39,1) 0%, rgba(156,39,176,1) 100%);  border-radius: 50%;" color="white">{{ item.icon }}</v-icon>
-            <div class="mb-1 mt-4 text-capitalize" style="line-height: 1.2; font-weight: bold; display: block; font-size: 20px;">{{ item.name }}</div>
-            <p class="text-center">There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
-          </div>
-        </div>
-      </v-container>
+    <div class="text__banner" data-aos="zoom-in">
+      <div class="text__banner__content text-h4 text-md-h3 text-lg-h2">
+        <div style="line-height: 1;">FourCoders</div>
+        <span class="mt-3 mt-md-5 text-h6 text-md-h5">Services</span>
+      </div>
     </div>
-    <div style="background-color: rgb(128 128 128 / 5%);" class="py-10 py-sm-12 py-md-14 py-lg-16">
+    <v-container class="py-10 py-sm-12 py-md-14 py-lg-16">
+      <div class="display-1" data-aos="fade-up" style="line-height: 1;">Our Services</div>
+      <div class="services__container mt-3">
+        <div class="services__container__item px-3 py-6 px-sm-4 py-sm-8 px-md-5 py-md-10 px-lg-6 py-lg-12" v-for="(item, i) in  services" :key="i" data-aos="zoom-in">
+          <v-icon class="pa-4" style="background: linear-gradient(90deg, rgba(243,108,39,1) 0%, rgba(156,39,176,1) 100%);  border-radius: 50%;" color="white">{{ item.icon }}</v-icon>
+          <div class="mb-1 mt-4 text-capitalize" style="line-height: 1.2; font-weight: bold; display: block; font-size: 20px;">{{ item.name }}</div>
+          <p class="text-center">There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
+        </div>
+      </div>
+    </v-container>
+    <div style="background-color: rgb(128 128 128 / 2.5%);" class="py-10 py-sm-12 py-md-14 py-lg-16">
       <v-container>
         <div class="mb-4" data-aos="fade-up">
           <div class="headline">What Do We Offer</div>
@@ -26,7 +30,7 @@
         </div>
       </v-container>
     </div>
-    <div class="py-10 py-sm-12 py-md-14 py-lg-16">
+    <div class="pt-10 pt-sm-12 pt-md-14 pt-lg-16">
       <div class="px-3 text-center mb-4">
         <div class="headline">We work on latest technologies</div>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod esse voluptates consequuntur pariatur fuga distinctio? <br> Ut, sapiente a dolores magnam ea voluptatum, possimus, est rerum ab illum reiciendis quibusdam amet?</p>

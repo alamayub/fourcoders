@@ -1,6 +1,6 @@
 <template>
   <v-app-bar color="white" app height="80" elevate-on-scroll>
-    <v-container class="d-flex justify-space-between align-center pa-0">
+    <v-container class="d-flex justify-space-between align-center py-0">
       <div class="logo" style="height: 50px;">
         <img src="../assets/logo.png" alt="Logo">  
       </div>
@@ -45,8 +45,8 @@ export default {
 .nav .theme--light.v-btn--active:hover::before, .nav .theme--light.v-btn--active::before { opacity: 0 !important; }
 .nav .v-btn { height: 80px !important; }
 .active__nav {
-  border-bottom: 3px solid #1976d2;
-  color: #1976d2 !important;
+  border-bottom: 3px solid rgb(243, 108, 39);
+  color: rgb(243, 108, 39) !important;
   font-weight: 400 !important;
 }
 .f_active_nav {

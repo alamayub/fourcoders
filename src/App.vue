@@ -45,6 +45,7 @@ img {
   font-weight: 300 !important;
   text-transform: capitalize !important;
   font-size: 12px !important;
+  text-transform: capitalize !important;
 }
 
 p {
