@@ -45,8 +45,8 @@ export default {
 .nav .theme--light.v-btn--active:hover::before, .nav .theme--light.v-btn--active::before { opacity: 0 !important; }
 .nav .v-btn { height: 80px !important; }
 .active__nav {
-  border-bottom: 3px solid rgb(243, 108, 39);
-  color: rgb(243, 108, 39) !important;
+  border-bottom: 3px solid #9c27b0;
+  color: #9c27b0 !important;
   font-weight: 400 !important;
 }
 .f_active_nav {

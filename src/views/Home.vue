@@ -42,7 +42,13 @@
     <!-- Services -->
     <div>
       <v-container class="py-10 py-sm-12 py-md-14 py-lg-16">
-        <div class="display-1" data-aos="fade-up">Our Services</div>
+        <div data-aos="fade-up" class="d-flex justify-space-between align-center">
+          <div class="display-1">Our Services</div>
+          <v-btn color="primary" rounded width="110" to="/services">
+            <span v-text="'More'" />
+            <v-icon small right v-text="'mdi-arrow-right'" />
+          </v-btn>
+        </div>
         <div class="services__container mt-3">
           <div class="services__container__item px-3 py-6 px-sm-4 py-sm-8 px-md-5 py-md-10 px-lg-6 py-lg-12" v-for="(item, i) in  services" :key="i" data-aos="zoom-in">
             <v-icon class="pa-4" style="background: linear-gradient(90deg, rgba(243,108,39,1) 0%, rgba(156,39,176,1) 100%);  border-radius: 50%;" color="white">{{ item.icon }}</v-icon>
@@ -114,7 +120,6 @@ export default {
   align-items: center;
   text-align: center;
   overflow: hidden;
-  cursor: pointer;
 }
 .services__container__item:hover {
   transform: translateY(-6px);

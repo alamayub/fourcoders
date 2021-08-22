@@ -16,15 +16,15 @@
         </div>
       </div>
     </v-container>
-    <div style="background-color: rgb(128 128 128 / 2.5%);" class="py-10 py-sm-12 py-md-14 py-lg-16">
+    <div style="background-color: rgb(128 128 128 / 4%);" class="py-10 py-sm-12 py-md-14 py-lg-16">
       <v-container>
         <div class="mb-4" data-aos="fade-up">
           <div class="headline">What Do We Offer</div>
-          <p style="text-align: justify !important;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod esse voluptates consequuntur pariatur fuga distinctio?</p>
+          <p style="text-align: justify !important;">For us, customer satisfaction comes first. We provide latest methods and tehnologies to fulfill our customers criteria.</p>
         </div>
-        <div class="d-flex flex-column" style="grid-gap: 12px;">
-          <div v-for="(method, m) in methods" :key="m" data-aos="fade-left">
-            <div class="totle">{{ method.title }}</div>
+        <div class="offer__container" style="grid-gap: 12px;">
+          <div class="offer__item pa-3 pa-sm-4 pa-md-5 pa-lg-6" v-for="(method, m) in methods" :key="m" data-aos="zoom-in">
+            <div class="title">{{ method.title }}</div>
             <p style="text-align: justify !important;">{{ method.desc }}</p>
           </div>
         </div>
@@ -114,17 +114,18 @@ export default {
   border: 1px solid transparent;
   border-radius: 4px;
 }
+/* Offers */
+.offer__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31%, 1fr));
+  grid-gap: 20px;
+}
+.offer__item {
+  border-radius: 4px;
+  box-shadow: 0 5px 15px 0 rgb(156 39 176 / 10%);
+}
 
-@media (max-width: 1060px) {
-  .services__container { grid-gap: 16px; grid-template-columns: repeat(auto-fit, minmax(32%, 1fr)); }
-}
-@media (max-width: 840px) {
-  .services__container { grid-gap: 12px; grid-template-columns: repeat(auto-fit, minmax(48%, 1fr)); }
-}
-@media (max-width: 500px) {
-  .services__container { grid-gap: 12px; grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); }
-}
-
+/* Technologies */
 .techs {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12%, 1fr));
@@ -142,19 +143,27 @@ p {
   text-align: center !important;
   margin-top: 2px;
 }
+
 @media (max-width: 1160px) {
   .techs { grid-template-columns: repeat(auto-fit, minmax(14%, 1fr)); }
 }
-@media (max-width: 1040px) {
+@media (max-width: 1060px) {
   .techs { grid-template-columns: repeat(auto-fit, minmax(16%, 1fr)); }
+  .services__container { grid-gap: 16px; grid-template-columns: repeat(auto-fit, minmax(32%, 1fr)); }
 }
 @media (max-width: 920px) {
   .techs { grid-template-columns: repeat(auto-fit, minmax(18%, 1fr)); }
 }
+@media (max-width: 840px) {
+  .offer__container { grid-template-columns: repeat(auto-fit, minmax(48%, 1fr)); }
+  .services__container { grid-gap: 12px; grid-template-columns: repeat(auto-fit, minmax(48%, 1fr)); }
+}
 @media (max-width: 780px) {
   .techs { grid-template-columns: repeat(auto-fit, minmax(20%, 1fr)); }
 }
-@media (max-width: 520px) {
+@media (max-width: 500px) {
+  .services__container { grid-gap: 12px; grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); }
+  .offer__container { grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); }
   .techs { grid-template-columns: repeat(auto-fit, minmax(32%, 1fr)); }
 }
 @media (max-width: 360px) {

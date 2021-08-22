@@ -3,7 +3,11 @@
     <div class="text__banner" data-aos="zoom-in">
       <div class="text__banner__content pa-3">
         <div style="line-height: 1;" class="display-1">Careers</div>
-        <p class="my-4" style="opacity: .9; text-align: center !important;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, obcaecati? <br> Id similique, quasi earum, amet magnam provident eum adipisci perferendis <br> necessitatibus natus soluta neque esse? Iure quasi quos suscipit dolores!</p>
+        <p class="my-4" style="opacity: .9; text-align: center !important; font-size: 14px !important;">
+          Have a zeal to contribute to the real world and create a visible impact in <br>
+          businesses and lives of consumers? We are transforming businesses and <br>
+          cunsumner experience everyday using technology.
+        </p>
         <v-btn data-aos="zoom-in" rounded width="150" color="primary">
           <span class="text-capitalize">join us</span>
         </v-btn>
@@ -60,14 +64,14 @@
     <!-- Vacancy fill up form -->
     <v-dialog v-model="dialog" max-width="500">
       <v-card>
-        <v-card-title class="text-h5">Fill Up Application Form </v-card-title>
+        <v-card-title class="text-h5">Send Your Resume </v-card-title>
         <v-card-text>
           <v-form  ref="form" lazy-validation v-model="valid" class="d-flex flex-column" style="grid-gap: 12px;">
             <v-text-field v-model="item.name" label="Full Name*" dense outlined hide-details prepend-inner-icon="mdi-account" :rules="[ v => !!v || '' ]" />
             <v-text-field v-model="item.phone" label="Phone Number*" dense outlined hide-details prepend-inner-icon="mdi-phone" :rules="[ v => !!v || '' ]" />
             <v-text-field v-model="item.email" label="Email*" dense outlined hide-details prepend-inner-icon="mdi-email" :rules="[ v => !!v || '' ]" />   
             <v-textarea v-model="item.message" label="Cover Letter..." dense outlined hide-details prepend-inner-icon="mdi-message" rows="4" /> 
-            <v-file-input v-model="resume" show-size counter dense outlined label="Upload Resume*" :rules="[ v => !!v || '' ]" /> 
+            <v-file-input v-model="resume" show-size counter dense outlined label="Upload Resume*" :rules="[ v => !!v || '' ]" prepend-icon="" prepend-inner-icon="mdi-paperclip" @change="upload" /> 
             <v-btn rounded color="primary" max-width="200" :disabled="!valid" @click="submit">submit</v-btn>           
           </v-form>  
         </v-card-text>
@@ -87,7 +91,7 @@ export default {
       { title: 'UX/UI Designer', type: 'Part Time', count: 1, desc: false },
       { title: 'Marketing Manager', type: 'Full Time', count: 2, desc: true },  
     ],
-    dialog: true, 
+    dialog: false, 
     valid: true,
     item: {
       name: null,
@@ -128,6 +132,9 @@ export default {
     ] 
   }),
   methods: {
+    upload(e) {
+      console.log(e)
+    },
     submit() {
       if(this.$refs.form.validate()) console.log('validate')
       else console.log('not validated')  
@@ -137,8 +144,6 @@ export default {
 </script>
 
 <style scoped>
-/* .text__banner { background: none !important; } */
-
 /* Join Us */
 .join {
   display: grid;
@@ -150,9 +155,8 @@ p {
   margin-bottom: 0 !important;  
 }
 .join__item { 
-    border-radius: 4px;
-    box-shadow: 0 5px 15px 0 rgb(156 39 176 / 10%);
-    /* background: linear-gradient(to top right, rgba(243 108 39 / 100%) 50%, rgba(156 39 176 / 100%) 50%); */
+  border-radius: 4px;
+  box-shadow: 0 5px 15px 0 rgb(156 39 176 / 10%);
 }
 /* Images */
 .images {

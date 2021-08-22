@@ -1,5 +1,5 @@
 <template>
-  <v-footer padless style="background: linear-gradient(90deg, rgba(243,108,39,1) 0%, rgba(156,39,176,1) 100%);" class="py-4 py-sm-8 py-md-12 py-lg-16" dark>
+  <v-footer padless color="primary" class="py-4 py-sm-8 py-md-12 py-lg-16" dark>
     <div class="container">
       <div class="footer mb-6">
         <div class="text-center">
@@ -40,12 +40,8 @@
           </div>
         </div>
       </div>  
-      <div class="pt-4 text-center d-flex flex-column flex-md-row align-center justify-space-between" style="border-top: 1px solid #fff;">
-        <div> Copyright @{{ new Date().getFullYear() }} <strong>FourCoders.</strong> All Right Reserved</div>  
-        <div class="mt-3 mt-md-0">
-          <v-btn outlined tile class="mr-2 text-capitalize">Terms & Conditions</v-btn>  
-          <v-btn outlined tile class="text-capitalize">Privacy Policy</v-btn>
-        </div>
+      <div class="pt-4 text-center" style="border-top: 1px solid #fff;">
+        <div style="font-weight: 300; letter-spacing: .5px; opacity: .75;">@FourCoders.com {{ new Date().getFullYear() }}. All Right Reserved</div>  
       </div>  
     </div>
   </v-footer>
