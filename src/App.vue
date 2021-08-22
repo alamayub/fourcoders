@@ -1,32 +1,109 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <Navbar />
+    <Sidebar />
+    <v-main>
+      <router-view :key="$route.path" />
+    </v-main>
+    <Footer />
+  </v-app>
 </template>
 
+<script>
+import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
+import Footer from './components/Footer'
+export default {
+  name: 'App',
+  components: { Sidebar, Navbar, Footer },
+  data: () => ({
+    //
+  }),
+};
+</script>
+
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* { text-decoration: none; }
+html { scroll-behavior: smooth; }
+/* Container */
+.container {
+  max-width: 1250px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 12px;
+}
+/* Image */
+img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+/* Button */
+.v-btn {
+  font-weight: 300 !important;
+  text-transform: capitalize !important;
+  font-size: 12px !important;
+}
+
+p {
+  font-size: 12px;
+  letter-spacing: .5px;
+  text-align: justify;
+  font-weight: 300;
+}
+
+/* Text Fields */
+.v-text-field--filled.v-input--dense.v-text-field--single-line > .v-input__control > .v-input__slot, 
+.v-text-field--filled.v-input--dense.v-text-field--outlined > .v-input__control > .v-input__slot, 
+.v-text-field--filled.v-input--dense.v-text-field--outlined.v-text-field--filled > .v-input__control > .v-input__slot, 
+.v-text-field--full-width.v-input--dense.v-text-field--single-line > .v-input__control > .v-input__slot, 
+.v-text-field--full-width.v-input--dense.v-text-field--outlined > .v-input__control > .v-input__slot, 
+.v-text-field--full-width.v-input--dense.v-text-field--outlined.v-text-field--filled > .v-input__control > .v-input__slot, 
+.v-text-field--outlined.v-input--dense.v-text-field--single-line > .v-input__control > .v-input__slot, 
+.v-text-field--outlined.v-input--dense.v-text-field--outlined > .v-input__control > .v-input__slot, 
+.v-text-field--outlined.v-input--dense.v-text-field--outlined.v-text-field--filled > .v-input__control > .v-input__slot {
+  border-radius: 0 !important;
+}
+.v-input input { font-size: 13px !important; }
+.v-input .v-label { font-size: 13px !important; }
+.v-input__icon .v-icon.v-icon, .v-select-list .v-icon.v-icon { font-size: 16px !important; }
+.v-text-field--outlined.v-input--is-focused fieldset { border: 1px solid #1976d2 !important; }
+.v-text-field--outlined.v-input--has-state fieldset { border: 1px solid #ff5252 !important; }
+
+/* Number type spin wheels */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/* Test banner */
+.text__banner {
+  background: linear-gradient(90deg, rgba(243,108,39,1) 0%, rgba(156,39,176,1) 100%);
+  height: 60vh;
+  margin-bottom: 30px;
+}
+.text__banner__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff;
   text-align: center;
-  color: #2c3e50;
+  overflow: hidden;
 }
-
-#nav {
-  padding: 30px;
+.text__banner__content span {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1 !important;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+@media (max-width: 1060px) {
+  .text__banner { height: 50vh; }
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+@media (max-width: 840px) {
+  .text__banner { height: 40vh; }
 }
 </style>
