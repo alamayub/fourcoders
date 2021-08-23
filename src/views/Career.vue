@@ -72,7 +72,7 @@
             <v-text-field v-model="item.email" label="Email*" dense outlined hide-details prepend-inner-icon="mdi-email" :rules="[ v => !!v || '' ]" />   
             <v-textarea v-model="item.message" label="Cover Letter..." dense outlined hide-details prepend-inner-icon="mdi-message" rows="4" /> 
             <v-file-input v-model="resume" show-size counter dense outlined label="Upload Resume*" :rules="[ v => !!v || '' ]" prepend-icon="" prepend-inner-icon="mdi-paperclip" @change="upload" /> 
-            <v-btn rounded color="primary" max-width="200" :disabled="!valid" @click="submit">submit</v-btn>           
+            <v-btn rounded color="primary" class="mx-auto" width="200" :disabled="!valid" @click="submit">submit</v-btn>           
           </v-form>  
         </v-card-text>
       </v-card>

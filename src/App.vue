@@ -44,12 +44,12 @@ img {
 .v-btn {
   font-weight: 300 !important;
   text-transform: capitalize !important;
-  font-size: 12px !important;
+  font-size: 13px !important;
   text-transform: capitalize !important;
 }
 
 p {
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: .5px;
   text-align: justify;
   font-weight: 300;
@@ -69,8 +69,8 @@ p {
 } */
 .v-input input, .v-input textarea { 
   font-size: 13px !important; 
-  letter-spacing: 1px !important; 
-  color: #9c27b0 !important; 
+  letter-spacing: .75px !important; 
+  /* color: #9c27b0 !important;  */
 }
 .v-input .v-label { 
   font-size: 13px !important; 

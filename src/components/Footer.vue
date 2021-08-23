@@ -52,9 +52,9 @@ export default {
   data: () => ({
     socials: [
       { icon: 'mdi-facebook', to: 'https://www.facebook.com' },
-      { icon: 'mdi-twitter', to: 'https://www.facebook.com' },
-      { icon: 'mdi-linkedin', to: 'https://www.facebook.com' },
-      { icon: 'mdi-instagram', to: 'https://www.facebook.com' }
+      { icon: 'mdi-twitter', to: 'https://www.twitter.com' },
+      { icon: 'mdi-linkedin', to: 'https://www.linkedin.com' },
+      { icon: 'mdi-instagram', to: 'https://www.instagram.com' }
     ],
     company: [
       { title: 'About Us', to: '/about' },
@@ -74,7 +74,7 @@ export default {
     contacts: [
       { icon: 'mdi-map-marker', title: 'Birgunj-10, Nepal' },
       { icon: 'mdi-email', title: 'info@fourcoders.com' },
-      { icon: 'mdi-cellphone', title: '+977 9876543210' },
+      { icon: 'mdi-phone', title: '+977 9876543210' },
     ],
   })  
 }
@@ -85,10 +85,10 @@ export default {
   display: grid;
   grid-gap: 12px;
   grid-template-columns: repeat(auto-fit, minmax(23%, 1fr)); 
+  letter-spacing: 1px;
+  font-weight: 300;
 }
-.footer__logo img {
-  max-height: 150px;  
-}
+.footer__logo img { max-height: 150px; }
 .footer__content__title {
   font-weight: bold;
   font-size: 25px;
