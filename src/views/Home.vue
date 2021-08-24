@@ -11,7 +11,7 @@
         <div class="mt-3 mt-sm-4 mt-md-5 mt-lg-6" style="font-size: x-large;">In Bussiness</div>
         <div class="text-center my-3 my-sm-4 my-md-5 my-lg-6" style="opacity: .65; font-size: 13px; letter-spacing: .5px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit voluptatum aliquid</div>
         <div>
-          <v-btn rounded width="200" large>
+          <v-btn rounded width="200" large to="/contact">
             <span>get started</span>
             <v-icon right size="16">mdi-arrow-right</v-icon>
           </v-btn>
@@ -58,6 +58,32 @@
         </div>
       </v-container>
     </div>
+
+    <!-- Our Projects & Clients -->
+    <div class="secondary white--text py-10 py-sm-12 py-md-14 py-lg-16" data-aos="fade-up">
+      <div class="client">
+        <div class="client__item text-center px-3 py-6 py-sm-8 py-md-10 py-lg-12" v-for="(item ,i) in items" :key="i" data-aos="fade-up">
+          <div style="font-size: 40px; line-height: 1; margin-bottom: 4px;">{{ item.count }}</div>
+          <div style="opacity: .8; text-transform: uppercase; letter-spacing: 1px;">{{ item.title }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Life At FourCoders -->
+    <div class="pt-10 pt-sm-12 pt-md-14 pt-lg-16">
+      <v-container class="mb-4 mb-sm-6 mb-md-8 mb-lg-10">
+        <div class="text-center" data-aos="fade-up">
+          <div class="headline font-weight-bold mb-2">Life At FourCoders</div>
+          <p style="text-align: center !important;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae perferendis consequuntur molestias unde harum reiciendis iusto quae assumenda hic asperiores facilis voluptate exercitationem impedit magni amet odit, quisquam, quo nemo!</p>
+        </div>
+      </v-container>
+      <div class="images">
+        <div class="image" v-for="(img, i) in images" :key="i" data-aos="zoom-in">
+          <img :src="img" alt="Image Description">
+        </div>
+      </div>  
+    </div>
+
   </div>
 </template>
 
@@ -73,6 +99,24 @@ export default {
       { icon: 'mdi-elevation-rise', name: 'digital marketing', },
       { icon: 'mdi-shopping-outline', name: 'e-commerce', },
     ],
+    items: [
+      { count: 5454, title: 'Completed Projects' },
+      { count: 456, title: 'Active Clients' },
+      { count: 252, title: 'OnGoing Projects' },
+      { count: 5456, title: 'Happy Clients' }
+    ],
+    images: [
+      'https://cdn.corporatefinanceinstitute.com/assets/home-office1.jpeg',
+      'https://miro.medium.com/max/1187/1*IQdJfacKYjGRWGJgGYpMOA.jpeg',
+      'https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg',
+      'https://images.squarespace-cdn.com/content/v1/5c51362e9d5abb96a228b53b/1549431692124-YUL6FYCHM0PK1FZ0TEH2/134744_2BrandonParkDr_092.jpg',
+      'https://asset.mansionglobal.com/editorial/9-ideas-for-home-office-design/assets/mVDNuOv9Jl/homeoffice_lead-2560x1400.jpeg',
+      'https://commercialobserver.com/wp-content/uploads/sites/3/2020/06/Hero-image-office.jpg',
+      'https://www.avepoint.com/blog/wp-content/uploads/2018/10/iStock-887882750.jpg',
+      'https://images.financialexpress.com/2021/01/1-704.jpg',
+      'https://images.adsttc.com/media/images/6077/21f1/f91c/81f9/7400/03c7/newsletter/novita-office-nyc-31web.jpg',
+      'https://stylesatlife.com/wp-content/uploads/2020/11/Elegant-Small-Office-Space-Design-Idea.jpg.webp',
+    ]
   })
 }
 </script>
@@ -105,42 +149,16 @@ export default {
   margin: 50px auto;
 }
 
-/* Services Container */
-.services__container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(31%, 1fr));
-  grid-gap: 20px;
-}
-.services__container__item {
-  border: 1px solid rgba(0 0 0 / 10%);
-  transition: ease-in-out 250ms;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-}
-.services__container__item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px 0 rgba(0 0 0 / 20%);
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-
 @media (max-width: 1060px) {
   .home__about { margin: 40px auto; }
-  .services__container { grid-gap: 16px; grid-template-columns: repeat(auto-fit, minmax(32%, 1fr)); }
 }
 @media (max-width: 840px) {
   .home__about { margin: 30px auto; }
-  .services__container { grid-gap: 12px; grid-template-columns: repeat(auto-fit, minmax(48%, 1fr)); }
 }
 @media (max-width: 600px) {
   .home__about { grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); }
 }
 @media (max-width: 500px) {
   .home__about { margin: 20px auto; }
-  .services__container { grid-gap: 12px; grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); }
 }
 </style>

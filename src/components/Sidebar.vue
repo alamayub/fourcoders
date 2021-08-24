@@ -21,7 +21,7 @@ export default {
     menus: [
       { title: 'Home', icon: 'mdi-home', to: '/' },
       { title: 'Services', icon: 'mdi-cog', to: '/services' },
-      { title: 'Portfolio', icon: 'mdi-bag-personal', to: '/portfolio' },
+      // { title: 'Portfolio', icon: 'mdi-bag-personal', to: '/portfolio' },
       { title: 'About Us', icon: 'mdi-account', to: '/about' },
       { title: 'Our Team', icon: 'mdi-account-multiple', to: '/our-team' },
       { title: 'Contact Us', icon: 'mdi-account-box', to: '/contact' },

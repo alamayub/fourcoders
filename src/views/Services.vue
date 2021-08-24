@@ -6,9 +6,14 @@
         <span class="mt-3 mt-md-5 text-h6 text-md-h5">Services</span>
       </div>
     </div>
+    <div style="background-color: rgb(128 128 128 / 4%);" class="py-10 py-sm-12 py-md-14 py-lg-16">
+      <v-container>
+        <p style="text-align: start !important; font-size: 14px !important;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam minima voluptate quos, fuga atque accusantium natus neque nisi quasi excepturi, alias ad saepe nulla consequuntur quibusdam assumenda pariatur maiores aut. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic commodi iste nostrum, fugiat repudiandae quod reiciendis iusto quam repellat aut? Perferendis quam accusamus laudantium, dolorum natus officiis perspiciatis sit id?</p>
+      </v-container>
+    </div>
     <v-container class="py-10 py-sm-12 py-md-14 py-lg-16">
-      <div class="display-1" data-aos="fade-up" style="line-height: 1;">Our Services</div>
-      <div class="services__container mt-3">
+      <div class="headline mb-4" data-aos="fade-up" style="line-height: 1;">Our Services</div>
+      <div class="services__container">
         <div class="services__container__item px-3 py-6 px-sm-4 py-sm-8 px-md-5 py-md-10 px-lg-6 py-lg-12" v-for="(item, i) in  services" :key="i" data-aos="zoom-in">
           <v-icon class="pa-4" style="background: linear-gradient(90deg, rgba(243,108,39,1) 0%, rgba(156,39,176,1) 100%);  border-radius: 50%;" color="white">{{ item.icon }}</v-icon>
           <div class="mb-1 mt-4 text-capitalize" style="line-height: 1.2; font-weight: bold; display: block; font-size: 20px;">{{ item.name }}</div>
@@ -18,9 +23,9 @@
     </v-container>
     <div style="background-color: rgb(128 128 128 / 4%);" class="py-10 py-sm-12 py-md-14 py-lg-16">
       <v-container>
-        <div class="mb-4" data-aos="fade-up">
+        <div class="mb-6 text-center" data-aos="fade-up">
           <div class="headline">What Do We Offer</div>
-          <p style="text-align: justify !important;">For us, customer satisfaction comes first. We provide latest methods and tehnologies to fulfill our customers criteria.</p>
+          <p style="text-align: center !important;">For us, customer satisfaction comes first. We provide latest methods and tehnologies to fulfill our customers criteria.</p>
         </div>
         <div class="offer__container" style="grid-gap: 12px;">
           <div class="offer__item pa-3 pa-sm-4 pa-md-5 pa-lg-6" v-for="(method, m) in methods" :key="m" data-aos="zoom-in">
@@ -92,28 +97,6 @@ export default {
 </script>
 
 <style scoped>
-/* Services Container */
-.services__container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(31%, 1fr));
-  grid-gap: 20px;
-}
-.services__container__item {
-  border: 1px solid rgba(0 0 0 / 10%);
-  transition: ease-in-out 250ms;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-}
-.services__container__item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px 0 rgba(0 0 0 / 20%);
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
 /* Offers */
 .offer__container {
   display: grid;
@@ -149,20 +132,17 @@ p {
 }
 @media (max-width: 1060px) {
   .techs { grid-template-columns: repeat(auto-fit, minmax(16%, 1fr)); }
-  .services__container { grid-gap: 16px; grid-template-columns: repeat(auto-fit, minmax(32%, 1fr)); }
 }
 @media (max-width: 920px) {
   .techs { grid-template-columns: repeat(auto-fit, minmax(18%, 1fr)); }
 }
 @media (max-width: 840px) {
   .offer__container { grid-template-columns: repeat(auto-fit, minmax(48%, 1fr)); }
-  .services__container { grid-gap: 12px; grid-template-columns: repeat(auto-fit, minmax(48%, 1fr)); }
 }
 @media (max-width: 780px) {
   .techs { grid-template-columns: repeat(auto-fit, minmax(20%, 1fr)); }
 }
 @media (max-width: 500px) {
-  .services__container { grid-gap: 12px; grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); }
   .offer__container { grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); }
   .techs { grid-template-columns: repeat(auto-fit, minmax(32%, 1fr)); }
 }

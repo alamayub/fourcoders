@@ -13,6 +13,11 @@
         </v-btn>
       </div>
     </div>
+    <div style="background-color: rgb(128 128 128 / 4%);" class="py-10 py-sm-12 py-md-14 py-lg-16">
+      <v-container>
+        <p style="text-align: start !important; font-size: 14px !important;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam minima voluptate quos, fuga atque accusantium natus neque nisi quasi excepturi, alias ad saepe nulla consequuntur quibusdam assumenda pariatur maiores aut. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic commodi iste nostrum, fugiat repudiandae quod reiciendis iusto quam repellat aut? Perferendis quam accusamus laudantium, dolorum natus officiis perspiciatis sit id?</p>
+      </v-container>
+    </div>
     <v-container class="py-10 py-sm-12 py-md-14 py-lg-16">
       <div class="headline text-center font-weight-bold" data-aos="fade-up">Why Join Us</div>  
       <div class="join mt-4 mt-sm-6 mt-md-8 mt-lg-10">
@@ -53,7 +58,12 @@
     </v-container>
 
     <div class="pt-10 pt-sm-12 pt-md-14 pt-lg-16">
-      <div class="headline text-center mb-4 mb-sm-6 mb-md-8 mb-lg-10 font-weight-bold">Life At FourCoders</div>
+      <v-container class="mb-4 mb-sm-6 mb-md-8 mb-lg-10">
+        <div class="text-center" data-aos="fade-up">
+          <div class="headline font-weight-bold mb-2">Life At FourCoders</div>
+          <p style="text-align: center !important;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae perferendis consequuntur molestias unde harum reiciendis iusto quae assumenda hic asperiores facilis voluptate exercitationem impedit magni amet odit, quisquam, quo nemo!</p>
+        </div>
+      </v-container>
       <div class="images">
         <div class="image" v-for="(img, i) in images" :key="i" data-aos="zoom-in">
           <img :src="img" alt="Image Description">
@@ -112,7 +122,6 @@ export default {
       'https://images.financialexpress.com/2021/01/1-704.jpg',
       'https://images.adsttc.com/media/images/6077/21f1/f91c/81f9/7400/03c7/newsletter/novita-office-nyc-31web.jpg',
       'https://stylesatlife.com/wp-content/uploads/2020/11/Elegant-Small-Office-Space-Design-Idea.jpg.webp',
-      'https://www.betterteam.com/images/office-assistant-job-description-6100x4067-2020124.jpeg' 
     ],  
     benefits: [
       { title: 'Fast Growing Company', desc: 'We are at an inflection point to achieve accelaration' },
@@ -158,12 +167,6 @@ p {
   border-radius: 4px;
   box-shadow: 0 5px 15px 0 rgb(156 39 176 / 10%);
 }
-/* Images */
-.images {
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr)); 
-}
-.images img { object-fit: cover !important; }
 
 /* Vacancy */
 .vacancy__item {
@@ -177,23 +180,20 @@ p {
 }
 @media (max-width: 1060px) {
   .join { grid-gap: 35px; }  
-  .images { grid-template-columns: repeat(auto-fit, minmax(25%, 1fr)); }
 }
 @media (max-width: 860px) {
   .join { 
     grid-template-columns: repeat(auto-fit, minmax(46%, 1fr));  
     grid-gap: 30px; 
   }  
-  .images { grid-template-columns: repeat(auto-fit, minmax(33%, 1fr)); }
 }
 @media (max-width: 760px) {
   .join { grid-gap: 25px; }  
 }
 @media (max-width: 500px) {
-   .join { 
+  .join { 
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));  
     grid-gap: 16px; 
   }
-  .images { grid-template-columns: repeat(auto-fit, minmax(50%, 1fr)); }
 }
 </style>
