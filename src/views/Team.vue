@@ -10,17 +10,17 @@
       <v-container>
         <div class="text-center mb-6">
           <div class="display-1 mb-3">Meet Our Team</div>  
-          <div style="font-size: 15px; letter-spacing: 1px; font-weight: 300;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor earum porro minus repellat, unde quibusdam cupiditate, fugiat, facilis aliquid accusamus.</div>  
+          <div style="font-size: 15px; letter-spacing: 1px; font-weight: 300;">Alone we can do so little; together we can do so much.</div>  
         </div>
         <div class="team">
-          <div class="team__item d-flex pa-4 pa-sm-5 pa-md-6 pa-lg-7" style="grid-gap: 20px;" v-for="a in 7" :key="a" data-aos="zoom-in">
+          <div class="team__item d-flex pa-4 pa-sm-5 pa-md-6 pa-lg-7" style="grid-gap: 20px;" v-for="(team, t) in teams" :key="t" data-aos="zoom-in">
             <div class="team__img">
-              <img src="https://static-koimoi.akamaized.net/wp-content/new-galleries/2020/10/peaky-blinders-do-you-know-cillian-murphy-as-thomas-shelby-smoked-3000-cigarettes-in-just-2-seasons-002.jpg" alt="Thomas Shelby">  
+              <img src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper.png" :alt="team.name">  
             </div>
             <div>
-              <div class="title" style="line-height: 1;">Thomas Shelby</div>
+              <div class="title" style="line-height: 1;">{{ team.name }}</div>
               <div style="font-size: 15px; letter-spacing: 1px; font-weight: 300;" class="mt-1 mb-2 primary--text">
-                <span style="border-bottom: 1px solid;">Peaky Blinders (CEO)</span>  
+                <span style="border-bottom: 1px solid;">{{ team.company.name }}</span>  
               </div>  
               <p class="mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, soluta quas accusantium temporibus blanditiis necessitatibus omnis porro laudantium perspiciatis sequi.</p>
             </div>
@@ -39,13 +39,17 @@
 <script>
 export default {
   data: () => ({
+    teams: [],
     socials: [
       { icon: 'mdi-facebook', to: 'https://www.facebook.com', color: '#3b5998' },
       { icon: 'mdi-twitter', to: 'https://www.twitter.com', color: '#00acee'  },
       { icon: 'mdi-linkedin', to: 'https://www.linkedin.com', color: '#0e76a8' },
       { icon: 'mdi-instagram', to: 'https://www.instagram.com', color: '#8a3ab9' }
-    ]  
-  })  
+    ] 
+  }),
+  created() {
+    fetch('https://jsonplaceholder.typicode.com/users').then(response => response.json()).then(json => this.teams = json)
+  } 
 }
 </script>
 
@@ -79,7 +83,6 @@ p { font-size: 14px !important; }
     align-items: center;
     text-align: center;  
   }  
-  p { text-align: center !important; } 
 }
 @media (max-width: 760px) {
   .team { 
@@ -99,6 +102,5 @@ p { font-size: 14px !important; }
     align-items: center;
     text-align: center;  
   }  
-  p { text-align: center !important; } 
 }
 </style>

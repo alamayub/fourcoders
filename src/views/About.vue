@@ -29,7 +29,7 @@
     </v-container>
 
     <!-- Our Projects & Clients -->
-    <div class="secondary white--text py-10 py-sm-12 py-md-14 py-lg-16" data-aos="fade-up">
+    <div class="primary white--text py-10 py-sm-12 py-md-14 py-lg-16" data-aos="fade-up">
       <div class="client">
         <div class="client__item text-center px-3 py-6 py-sm-8 py-md-10 py-lg-12" v-for="(item ,i) in items" :key="i" data-aos="fade-up">
           <div style="font-size: 40px; line-height: 1; margin-bottom: 4px;">{{ item.count }}</div>

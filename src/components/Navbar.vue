@@ -1,6 +1,6 @@
 <template>
   <v-app-bar color="white" app height="80" elevate-on-scroll>
-    <v-container class="d-flex justify-space-between align-center py-0">
+    <v-container class="d-flex justify-space-between align-center pa-0 px-lg-3">
       <div class="logo" style="height: 50px;">
         <img src="../assets/logo.png" alt="Logo">  
       </div>

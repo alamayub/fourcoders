@@ -13,11 +13,6 @@
         </v-btn>
       </div>
     </div>
-    <div style="background-color: rgb(128 128 128 / 4%);" class="py-10 py-sm-12 py-md-14 py-lg-16">
-      <v-container>
-        <p style="text-align: start !important; font-size: 14px !important;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam minima voluptate quos, fuga atque accusantium natus neque nisi quasi excepturi, alias ad saepe nulla consequuntur quibusdam assumenda pariatur maiores aut. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic commodi iste nostrum, fugiat repudiandae quod reiciendis iusto quam repellat aut? Perferendis quam accusamus laudantium, dolorum natus officiis perspiciatis sit id?</p>
-      </v-container>
-    </div>
     <v-container class="py-10 py-sm-12 py-md-14 py-lg-16">
       <div class="headline text-center font-weight-bold" data-aos="fade-up">Why Join Us</div>  
       <div class="join mt-4 mt-sm-6 mt-md-8 mt-lg-10">
@@ -33,14 +28,30 @@
       </div>
     </v-container>
 
+    <div style="background-color: rgb(128 128 128 / 4%);" class="py-10 py-sm-12 py-md-14 py-lg-16">
+      <v-container>
+        <div class="text-center mb-6" data-aos="fade-up">
+          <div class="headline font-weight-bold">Benefits</div>
+          <p class="text-center">Working together facilitates idea generation and creativity</p>
+        </div> 
+        
+        <div class="benfits">
+          <div v-for="(perk, p) in perks" :key="p" class="d-flex flex-column align-center text-center pa-4" style="grid-gap: 6px; border: .5px solid rgb(0 0 0 / 10%);">
+            <v-icon v-text="perk.icon" color="primary" size="64" />
+            <div class="title">{{ perk.title }}</div>
+          </div>
+        </div>
+      </v-container>
+    </div>
+
     <!-- Vacancies -->
-    <v-container id="#join">
+    <v-container id="#join" class="pt-10 pt-sm-12 pt-md-14 pt-lg-16">
       <div class="text-center mb-5">
         <div class="headline mb-1">Want to join FourCoders?</div> 
         <p style="text-align: center !important;">Checkout our current openings, fill the application form. <br> We will get back to you.</p> 
       </div>
       <div class="vacancy d-flex flex-column" style="grid-gap: 16px;">
-        <div class="vacancy__item pa-3 pa-sm-4 pa-md-5 pa-lg-6" v-for="(vacancy, v) in vacancies" :key="v" data-aos="zoom-in">
+        <div class="vacancy__item pa-4 pa-md-5 pa-lg-6" v-for="(vacancy, v) in vacancies" :key="v" data-aos="zoom-in" @click="dialog = true">
           <div style="width: 100%;">
             <div class="d-flex justify-space-between align-center">
               <div class="title">{{ vacancy.title }}</div>
@@ -81,7 +92,8 @@
             <v-text-field v-model="item.phone" label="Phone Number*" dense outlined hide-details prepend-inner-icon="mdi-phone" :rules="[ v => !!v || '' ]" />
             <v-text-field v-model="item.email" label="Email*" dense outlined hide-details prepend-inner-icon="mdi-email" :rules="[ v => !!v || '' ]" />   
             <v-textarea v-model="item.message" label="Cover Letter..." dense outlined hide-details prepend-inner-icon="mdi-message" rows="4" /> 
-            <v-file-input v-model="resume" show-size counter dense outlined label="Upload Resume*" :rules="[ v => !!v || '' ]" prepend-icon="" prepend-inner-icon="mdi-paperclip" @change="upload" /> 
+            <v-file-input v-model="resume" show-size counter dense outlined hide-details label="Upload Resume*" :rules="[ v => !!v || '' ]" 
+              prepend-icon="" prepend-inner-icon="mdi-paperclip" @change="upload" /> 
             <v-btn rounded color="primary" class="mx-auto" width="200" :disabled="!valid" @click="submit">submit</v-btn>           
           </v-form>  
         </v-card-text>
@@ -168,6 +180,12 @@ p {
   box-shadow: 0 5px 15px 0 rgb(156 39 176 / 10%);
 }
 
+.benfits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15%, 1fr));
+  grid-gap: 12px;
+}
+
 /* Vacancy */
 .vacancy__item {
   box-shadow: 0 3px 10px 0 rgb(0 0 0 / 10%);
@@ -185,7 +203,8 @@ p {
   .join { 
     grid-template-columns: repeat(auto-fit, minmax(46%, 1fr));  
     grid-gap: 30px; 
-  }  
+  }
+  .benfits { grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)); }  
 }
 @media (max-width: 760px) {
   .join { grid-gap: 25px; }  
@@ -195,5 +214,6 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));  
     grid-gap: 16px; 
   }
+  .benfits { grid-template-columns: repeat(auto-fit, minmax(48%, 1fr)); }
 }
 </style>

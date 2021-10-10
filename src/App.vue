@@ -16,9 +16,6 @@ import Footer from './components/Footer'
 export default {
   name: 'App',
   components: { Sidebar, Navbar, Footer },
-  data: () => ({
-    //
-  }),
 };
 </script>
 
@@ -26,6 +23,7 @@ export default {
 <style>
 * { text-decoration: none; }
 html { scroll-behavior: smooth; }
+.v-toolbar__content { padding: 0 12px !important; }
 /* Container */
 .container {
   max-width: 1250px;
@@ -56,7 +54,7 @@ p {
 }
 
 /* Text Fields */
-/* .v-text-field--filled.v-input--dense.v-text-field--single-line > .v-input__control > .v-input__slot, 
+.v-text-field--filled.v-input--dense.v-text-field--single-line > .v-input__control > .v-input__slot, 
 .v-text-field--filled.v-input--dense.v-text-field--outlined > .v-input__control > .v-input__slot, 
 .v-text-field--filled.v-input--dense.v-text-field--outlined.v-text-field--filled > .v-input__control > .v-input__slot, 
 .v-text-field--full-width.v-input--dense.v-text-field--single-line > .v-input__control > .v-input__slot, 
@@ -66,7 +64,7 @@ p {
 .v-text-field--outlined.v-input--dense.v-text-field--outlined > .v-input__control > .v-input__slot, 
 .v-text-field--outlined.v-input--dense.v-text-field--outlined.v-text-field--filled > .v-input__control > .v-input__slot {
   border-radius: 0 !important;
-} */
+}
 .v-input input, .v-input textarea { 
   font-size: 13px !important; 
   letter-spacing: .75px !important; 
@@ -79,7 +77,7 @@ p {
 }
 .v-input__icon .v-icon.v-icon, .v-select-list .v-icon.v-icon { font-size: 16px !important; }
 .v-text-field--outlined.v-input--is-focused fieldset { border: 1px solid #9c27b0 !important; }
-.v-text-field--outlined.v-input--has-state fieldset { border: 1px solid #f36c27 !important; }
+.v-text-field--outlined.v-input--has-state fieldset { border: 1px solid #fe0018 !important; }
 
 /* Number type spin wheels */
 input[type=number]::-webkit-inner-spin-button, 
@@ -90,7 +88,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* Test banner */
 .text__banner {
-  background: linear-gradient(90deg, rgba(243,108,39,1) 0%, rgba(156,39,176,1) 100%);
+  background: linear-gradient(90deg, rgba(254, 0, 24, 1) 0%, rgba(156,39,176,1) 100%);
   height: 60vh;
 }
 .text__banner__content {

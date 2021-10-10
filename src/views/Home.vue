@@ -30,7 +30,7 @@
           <div class="pa-4 pa-sm-6 pa-md-8 pa-lg-10">
             <div class="text-h5 text-md-h4 mb-2" data-aos="fade-left">About Us</div>
             <p class="text-justify" data-aos="fade-right">{{ intro1 }}</p>
-            <v-btn to="/about" data-aos="zoom-in" rounded width="150" dark style="background: linear-gradient(90deg, rgba(243,108,39,1) 0%, rgba(156,39,176,1) 100%);">
+            <v-btn to="/about" data-aos="zoom-in" rounded width="150" dark style="background: linear-gradient(90deg, rgba(254, 0, 24, 1) 0%, rgba(156,39,176,1) 100%);">
               <span class="text-capitalize">more</span>
               <v-icon size="16" right>mdi-arrow-right</v-icon>
             </v-btn>
@@ -51,7 +51,7 @@
         </div>
         <div class="services__container mt-3">
           <div class="services__container__item px-3 py-6 px-sm-4 py-sm-8 px-md-5 py-md-10 px-lg-6 py-lg-12" v-for="(item, i) in  services" :key="i" data-aos="zoom-in">
-            <v-icon class="pa-4" style="background: linear-gradient(90deg, rgba(243,108,39,1) 0%, rgba(156,39,176,1) 100%);  border-radius: 50%;" color="white">{{ item.icon }}</v-icon>
+            <v-icon class="pa-4" style="background: linear-gradient(90deg, rgba(254, 0, 24, 1) 0%, rgba(156,39,176,1) 100%);  border-radius: 50%;" color="white">{{ item.icon }}</v-icon>
             <div class="mb-1 mt-4 text-capitalize" style="line-height: 1.2; font-weight: bold; display: block; font-size: 20px;">{{ item.name }}</div>
             <p class="text-center">There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
           </div>
@@ -60,7 +60,7 @@
     </div>
 
     <!-- Our Projects & Clients -->
-    <div class="secondary white--text py-10 py-sm-12 py-md-14 py-lg-16" data-aos="fade-up">
+    <div class="primary white--text py-10 py-sm-12 py-md-14 py-lg-16" data-aos="fade-up">
       <div class="client">
         <div class="client__item text-center px-3 py-6 py-sm-8 py-md-10 py-lg-12" v-for="(item ,i) in items" :key="i" data-aos="fade-up">
           <div style="font-size: 40px; line-height: 1; margin-bottom: 4px;">{{ item.count }}</div>
@@ -138,7 +138,7 @@ export default {
   background-color: rgb(0 0 0 / 20%);
 }
 .v-btn {
-  background: linear-gradient(90deg, rgba(243,108,39,1) 0%, rgba(156,39,176,1) 100%);
+  background: linear-gradient(90deg, rgba(254, 0, 24, 1) 0%, rgba(156,39,176,1) 100%);
   color: white;
 }
 

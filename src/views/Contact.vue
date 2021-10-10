@@ -35,22 +35,20 @@
         </div>
         <div data-aos="fade-up">
           <div class="mb-4">
-            <div class="display-1 mb-3" style="line-height: 1;">Leave Us Message</div>
-            <div style="font-size: 15px; letter-spacing: 1px; font-weight: 300;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente animi deleniti esse doloribus sunt consequuntur nam nobis, fuga ducimus?</div>
+            <div class="display-1 mb-3" style="line-height: 1;">Message Us</div>
+            <div style="font-size: 15px; letter-spacing: 1px; font-weight: 300;">Leave us message and we'll get back to you as soon as possible.</div>
           </div>
-          <v-form v-model="valid" class="primary--text d-flex flex-column" style="grid-gap: 20px;" lazy-validation ref="form">
+          <v-form v-model="valid" class="primary--text d-flex flex-column" style="grid-gap: 12px;" lazy-validation ref="form">
             <div class="form__div">
               <v-text-field v-model="item.name" outlined dense hide-details label="Full Name*" :rules="[ v => !!v || '' ]" />
               <v-text-field v-model="item.phone" :counter="10" type="number" outlined dense hide-details label="Phone Number*" :rules="phoneRules" />
-            </div>
-            <div class="form__div">
               <v-text-field v-model="item.email" outlined dense hide-details label="Email*" :rules="emailRules" />
               <v-select v-model="item.type" :items="types" outlined dense hide-details label="Please Select*" :rules="[ v => !!v || '' ]" />
             </div>
             <v-textarea v-model="item.message" outlined dense hide-details label="Describe your task for us." />
             <div style="font-size: 14px; letter-spacing: .5px;" class="primary--text">By submitting this form, you are agreeing to our Terms Condition and Privacy policy rules.</div>
             <div class="text-end">
-              <v-btn color="secondary" rounded width="150" large :disabled="!valid" @click.stop="sendMessage">submit</v-btn>
+              <v-btn color="primary" rounded width="150" large :disabled="!valid" @click.stop="sendMessage">submit</v-btn>
             </div>
           </v-form>
         </div>
@@ -68,7 +66,7 @@ export default {
     contacts: [
       { icon: 'mdi-map-marker', title: 'Address', value: 'Birgunj-10, Nepal' },
       { icon: 'mdi-phone', title: 'Phone', value: '+977 9814245916 | +977 9809167106' },
-      { icon: 'mdi-email', title: 'Email', value: 'info@fourcoders.com' }
+      { icon: 'mdi-email', title: 'Email', value: 'fourcoders2017@gmail.com' }
     ],
     socials: [
       { icon: 'mdi-facebook', to: 'https://www.facebook.com', color: '#3b5998' },
@@ -84,7 +82,7 @@ export default {
       type: null,
       message: null  
     },
-    types: ['Web Development', 'Mobile App', 'Web Hosting', 'On Demand App', 'Digital Marketing', 'E-commerce'],
+    types: ['Web Development', 'Mobile App', 'Web Hosting', 'On Demand App', 'Digital Marketing', 'E-commerce', 'Other'],
     phoneRules: [
       v => !!v || '',
       v => v.length === 10 || ''
@@ -111,8 +109,8 @@ export default {
 }
 .form__div {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
-  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+  grid-gap: 12px;
 }
 .field__title {
   font-size: 14px;
@@ -134,9 +132,6 @@ iframe {
 }
 
 @media (max-width: 500px) {
-  .form__div {
-    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-    grid-gap: 16px;
-  }
+  .form__div { grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); }
 }
 </style>
